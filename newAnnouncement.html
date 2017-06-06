@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			background-color: olive;
+		}
+		div{
+			height: 400px;
+			width: 100%;
+			background-color: white;
+			border: 7px solid orange;
+			background-image: src
+
+		}
+		img {
+			height:500px;
+			width: 500px;
+			border: solid;
+			position:absolute;
+			margin-bottom: 300px;
+			margin-left: 680px;					
+		}
+		a{ 
+			font-size: 75pt;font-size:75pt; 
+			color: yellow;position:absolute;
+			letter-spacing: -20px;
+		}
+
+		#back{
+			margin-top: 600px;
+			margin-left: 500px;
+			
+		z-index: 999;
+		}
+		#front{
+			margin-left: 1350px;
+			margin-top: 600px;
+			margin-right: 300px
+		z-index: 999;
+		}
+		#front:hover{
+		text-shadow: 5px 2px 3px;
+		color:blue;
+		}
+		#back:hover{
+		text-shadow: 5px 2px 3px;
+		color:blue;
+		}
+
+	</style>
+
+</head>
+
+<body>
+<a id="back" class="back-button" onclick="plusDivs(-1)">&#10094 &#10094</a>
+<a id="front" class="back-button" onclick="plusDivs(+1)">&#10095 &#10095</a>
+<!--SLIDESHOW PICS-->
+<div class="bgvideo">
+	<video autoplay width="100%">
+		<source src="lion.mp4" type="video/mp4">
+		<source src="lion.webm" type="video/webm">
+	</video>
+
+</div>
+	<img class="slides" src="https://i.ytimg.com/vi/5HPnQppUtEs/maxresdefault.jpg">
+
+	<img class="slides" src="http://www.kinderfilmwelt.de/tl_files/upload/movies/images/african_safari/african_safari_06.jpg">
+
+	<img class="slides" src="http://kids.nationalgeographic.com/content/dam/kids/photos/articles/Nature/Q-Z/10%20Cool%20Things%20about%20Lions/cool-things-lions-9.ngsversion.1472158223990.adapt.1900.1.jpg">
+
+	<img class="slides" src="http://2.bp.blogspot.com/-GimyJ9n-bzU/UDsbaIXT1yI/AAAAAAAAA9Q/sbhaqoj7ubA/s1600/Hippo+attacks+endangered+animal+species+protection+and+conservation+endangered+animal+species+save+the+beautiful+elephant+endangered+Africa+safaris+animal+picture.jpg">
+
+	<img class="slides"  src="http://www.photovolcanica.com/PenguinSpecies/African/SA08_2115.jpg">
+<!--Background Video & Chevrons-->	
+
+<!--JAVASCRIPT -->
+<script type="text/javascript">
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n){
+		showDivs(slideIndex += n);
+	}	
+	function showDivs(n){
+		var i;
+		var x = document.getElementsByClassName("slides");
+		if(n > x.length) {slideIndex = 1}
+		if(n < 1) {slideIndex = x.length}
+		for(i = 0; i < x.length; i++){
+			x[i].style.display = "none";
+		}
+		x[slideIndex-1].style.display = "block";
+	}
+
+</script>
+
+</body>
+
+</html>
